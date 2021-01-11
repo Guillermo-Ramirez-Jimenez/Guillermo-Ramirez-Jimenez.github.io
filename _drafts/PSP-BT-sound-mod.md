@@ -39,11 +39,11 @@ Now that everything we don't need has been removed, we can connect the remaining
 
 The connections are divided in two blocks: the power ones and the data ones. The power connections are just the PSP power pins to the battery pins in the bluetooth device. The data connections are the two sound channels from the PSP to the board's mini jack ones.
 
-Where do we connect the cables to the PSP? To the audio mini jack. But these connectors actually have 4 pins: left channel, right channel, ground and detection. What is the detection pin? When you plug your headphones, that pin is connected to ground so the device detects it and makes the adjustments needed. In some cases it can even detect the type of device connected depending on the impedance that shorts the pin to ground. In the PSP case, it can't detect what is attached, but we still need to short it whenever we switch on the bluetooth so the audio out is enabled and the speakers disabled.
+Where do we connect the cables to the PSP? To the audio mini jack. But these connectors actually have 4 pins: left channel, right channel, ground and detection. What is the detection pin? When you plug your headphones, that pin is connected to a higher voltage so the device detects it and makes the adjustments needed. In some cases it can even detect the type of device connected, afaik, not the PSP case. Still, we've to change it to disable the speakers.
 
-So, to sum up, we need to switch on the device by driving power into it and enable the audio out by pulling down the detection pin. Both are done with a single switch at the same time.
+So, to sum up, we need to switch on the device by driving power into it and enable the audio out by pulling up the detection pin. Both are done with a single switch at the same time.
 
-For power switching we're using a standard N-channel mosfet which is controlled by the same switch as the detection pin.
+For power switching we're using a 2N7000, a standard N-channel mosfet which is controlled by the same switch as the detection pin.
 
 The final assembly can be seen in the diagram below:
 
@@ -51,8 +51,10 @@ The final assembly can be seen in the diagram below:
 
 
 
-What's left is soldering the components together. You can mount the mosfet and switch on a cheap prototype PCB as I did. After you've finished it, just glue it to the PSP with a glue gun, adhesive tape or similar.
+What's left is soldering the components together. You can mount the 2N7000 and switch on a cheap prototype PCB as I did. After you've finished it, just glue it to the PSP with a glue gun, adhesive tape or similar.
 
 Done! Enjoy your bluetooth audio enabled PSP!
+
+An extension of this project could be a circuit that enables the BT by pressing certain PSP buttons at the same time rather than using an additional switch. It could be easily done with a MCU like an Arduino, which could be used for other additional tasks, or with some logic circuits.
 
 NOTE: I noticed the sound output is really weak so you need to turn the volume up to the max in the PSP or in the target device. I recommend the PSP to reduce the noise sent. It could be fixed replacing the PSP audio driver, the bluetooth module's amplifier or placing an additonal one in the middle, but that's something for another day.
