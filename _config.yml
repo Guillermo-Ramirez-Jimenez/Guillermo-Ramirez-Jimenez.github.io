@@ -32,7 +32,7 @@ github_username:  Guillermo-Ramirez-Jimenez
 linkedin_username: guillermo-ramírez-jiménez
 
 # Build settings
-theme: minima
+theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
 markdown: GFM
