@@ -1,3 +1,8 @@
+---
+layout: post
+title: PSP BT sound mod
+---
+
 I guess if you're reading this you probably have a PSP (probably not a GO one) and have always wondered why you couldn't connect your fancy wireless bluetooth headphones or earphones to it. Well, I figured out a way to do it which involves some hardware modification.
 
 One of the pros of this method is it can be easily applied to a wide ammount of devices the same way. The main con is that it requires soldering and, in the PSP specific case, removing the UMD drive because of space constraints.
