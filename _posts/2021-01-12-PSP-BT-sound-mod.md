@@ -19,17 +19,17 @@ The bluetooth sound module:
 
 ![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_202052.jpg "BT module")
 
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_202224.jpg "BT module side")
 
-
-
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_202437.jpg "BT module top")
 
 As you can see, the device is quite simple. The big rounded button is to power it on, the switch on the side is for mode, choosing between receiver (RX) and transmitter (TX), the micro usb is the charging port and the mini jack is the audio input/output.
 
 Once disassembled the following can be seen:
 
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_234749.jpg "BT module disassembled top")
 
-
-
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_234844.jpg "BT module disassembled bottom")
 
 This module has a not really common feature that allows it to work as a bluetooth emitter and send audio to (in theory) any bluetooth audio receiver.
 
