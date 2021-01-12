@@ -39,11 +39,11 @@ Now that everything we don't need has been removed, we can connect the remaining
 
 The connections are divided in two blocks: the power ones and the data ones. The power connections are just the PSP power pins to the battery pins in the bluetooth device. The data connections are the two sound channels from the PSP to the board's mini jack ones.
 
-Where do we connect the cables to the PSP? To the audio mini jack. But these connectors actually have 4 pins: left channel, right channel, ground and detection. What is the detection pin? When you plug your headphones, that pin is connected to a higher voltage so the device detects it and makes the adjustments needed. In some cases it can even detect the type of device connected, afaik, not the PSP case. Still, we've to change it to disable the speakers.
+Where do we connect the cables to the PSP? To the audio mini jack. But these connectors actually have 4 pins: left channel, right channel, ground and detection. What is the detection pin? When you plug your headphones, that pin is connected to ground so the device detects it and makes the adjustments needed. In some cases it can even detect the type of device connected, afaik, not the PSP case. Still, we've to change it to disable the speakers.
 
-So, to sum up, we need to switch on the device by driving power into it and enable the audio out by pulling up the detection pin. Both are done with a single switch at the same time.
+So, to sum up, we need to switch on the device by driving power into it and enable the audio out by pulling the detection pin to ground. Both are done with a single switch at the same time.
 
-For power switching we're using a 2N7000, a standard N-channel mosfet which is controlled by the same switch as the detection pin.
+For the detection pin switching we're using a 2N7000, a standard N-channel mosfet which is controlled by the same switch as the detection pin. The power switching is handled by the switch itself.
 
 The final assembly can be seen in the diagram below:
 
@@ -51,7 +51,7 @@ The final assembly can be seen in the diagram below:
 
 
 
-What's left is soldering the components together. You can mount the 2N7000 and switch on a cheap prototype PCB as I did. After you've finished it, just glue it to the PSP with a glue gun, adhesive tape or similar.
+What's left is soldering the components together. You can mount the 2N7000 and switch on a cheap prototype PCB as I did. After you've finished it, just glue it to the PSP with a glue gun, adhesive tape or similar. It's important to note that installing it involves disassembling and reassembling the majority of the PSP, which I'll not cover here.
 
 Done! Enjoy your bluetooth audio enabled PSP!
 
