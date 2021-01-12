@@ -17,7 +17,7 @@ What you need:
 
 The bluetooth sound module:
 
-
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_202052.jpg "BT module")
 
 
 
