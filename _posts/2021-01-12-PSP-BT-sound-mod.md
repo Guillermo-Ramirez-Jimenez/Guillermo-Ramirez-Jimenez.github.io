@@ -53,11 +53,11 @@ For the detection pin switching we're using a 2N7000, a standard N-channel mosfe
 
 The final assembly can be seen in the diagram below:
 
-
-
-
+> Insert schematic
 
 What's left is soldering the components together. You can mount the 2N7000 and switch on a cheap prototype PCB as I did. After you've finished it, just glue it to the PSP with a glue gun, adhesive tape or similar. It's important to note that installing it involves disassembling and reassembling the majority of the PSP, which I'll not cover here.
+
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_161655.jpg "Assembly soldered")
 
 Done! Enjoy your bluetooth audio enabled PSP!
 
