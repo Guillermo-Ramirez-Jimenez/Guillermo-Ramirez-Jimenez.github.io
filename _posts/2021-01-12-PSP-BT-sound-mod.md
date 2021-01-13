@@ -1,4 +1,5 @@
 ---
+layout: post
 title: PSP BT sound mod
 author: Guille
 tags: PSP bluetooth BT mod
