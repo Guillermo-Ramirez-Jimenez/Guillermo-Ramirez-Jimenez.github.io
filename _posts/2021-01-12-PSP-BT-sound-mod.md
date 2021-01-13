@@ -31,6 +31,12 @@ Once disassembled the following can be seen:
 
 ![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/IMG_20190302_234844.jpg "BT module disassembled bottom")
 
+And the most relevant components:
+
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/BT-module-top.png "BT module labeled top")
+
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-01-12-PSP-BT-sound-mod/images/BT-module-bottom.png "BT module labeled bottom")
+
 This module has a not really common feature that allows it to work as a bluetooth emitter and send audio to (in theory) any bluetooth audio receiver.
 
 First, we need to remove some components that aren't needed so we can connect it later to the PSP and save some space and weight too.
