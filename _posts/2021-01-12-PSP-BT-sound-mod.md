@@ -68,3 +68,5 @@ Done! Enjoy your bluetooth audio enabled PSP!
 An extension of this project could be a circuit that enables the BT by pressing certain PSP buttons at the same time rather than using an additional switch. It could be easily done with a MCU like an Arduino, which could be used for other additional tasks, or with some logic circuits.
 
 NOTE: I noticed the sound output is really weak so you need to turn the volume up to the max in the PSP or in the target device. I recommend the PSP to reduce the noise sent. It could be fixed replacing the PSP audio driver, the bluetooth module's amplifier or placing an additonal one in the middle, but that's something for another day.
+
+[Files in GitHub](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/tree/main/_posts/2021-01-12-PSP-BT-sound-mod)
