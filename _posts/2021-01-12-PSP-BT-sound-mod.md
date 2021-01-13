@@ -37,7 +37,9 @@ First, we need to remove some components that aren't needed so we can connect it
 
 This device's powered by a standard lipo battery. To make the assembly simpler, we're going to remove it and connect the power pins to the PSP battery.
 
-The mode switch can be removed if the TX pin is soldered to the central one so it's always in transmitter mode (TX).
+The mode switch can be removed if the TX pin is shorted to the central one so it's always in transmitter mode (TX).
+
+The power button is shorted so it automatically powers on when the voltage is pulled up.
 
 The usb is also removed as there is no need to charge any battery. In theory you could charge the PSP battery with it, but it's redundant as the PSP already has its own battery charging ICs. If you've enough ability and patience, you can try to trim the PCB removing the charging ICs to save more space and weight, and possibly enabling the module to be placed inside the PSP without removing the UMD drive.
 
