@@ -41,8 +41,35 @@ Not what I expected. However, there are many "SQBOOT" matches. Pay attention to 
 
 I wrote a simple Python script which divides the file according to the offsets specified in a separate file. The result is 4 files of 64KB and 1 of 256KB. The last file is the remaining memory, which is blank. Now, it's important to note that a blank memory is full of ones, which means all the values are 0xFF.
 
-Let's have a look at the other files in Binwalk. Binwalk is an open source program designed to identify relevant parts of binary firmware files. The initial results are:
+Let's have a look at the other files in Binwalk. Binwalk is an open source program designed to identify relevant parts of binary firmware files. The initial results are, in order:
 
-
-
+```
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+42620         0xA67C          JPEG image data, EXIF standard
+42635         0xA68B          TIFF image data, big-endian, offset of first image directory: 136
+```
+```
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+42620         0xA67C          JPEG image data, EXIF standard
+42635         0xA68B          TIFF image data, big-endian, offset of first image directory: 136
+```
+```
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+42620         0xA67C          JPEG image data, EXIF standard
+42635         0xA68B          TIFF image data, big-endian, offset of first image directory: 136
+```
+```
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+6795          0x1A8B          JPEG image data, JFIF standard 1.02
+6825          0x1AA9          TIFF image data, little-endian offset of first image directory: 8
+7127          0x1BD7          JPEG image data, JFIF standard 1.02
+11700         0x2DB4          JPEG image data, JFIF standard 1.02
+21821         0x553D          Copyright string: "Copyright (c) 1998 Hewlett-Packard Company"
+42620         0xA67C          JPEG image data, EXIF standard
+42635         0xA68B          TIFF image data, big-endian, offset of first image directory: 136
+```
 TODO
