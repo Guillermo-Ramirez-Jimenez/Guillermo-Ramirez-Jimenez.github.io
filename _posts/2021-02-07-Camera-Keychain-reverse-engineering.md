@@ -31,6 +31,8 @@ Also, there's a SPI flash chip labeled as 25Q40T. Looking for it on the net reve
 
 Let's make a memory dump! I'm not going to show how to do it in this article, maybe later in a separate one. I'll just say I used a CH341A module with the clip add-on.
 
-The result is a 512KB file. Let's start having a look at it in a hex editor. Here's the result:
+The result is a 512KB file. Let's start having a look at it in a hex editor (BTW, I'm using HxD). I'll do a wild guess and suppose it uses U-Boot as a bootloader. The bootloader is the first piece of code that is loaded in memory and its purpose is to initialize and facilitate the start of the following programs. U-Boot is an open source bootloader that's been broadly adopted for embedded projects because of its high portability.
+
+Let's look for a "boot" string in the file.
 
 TODO
