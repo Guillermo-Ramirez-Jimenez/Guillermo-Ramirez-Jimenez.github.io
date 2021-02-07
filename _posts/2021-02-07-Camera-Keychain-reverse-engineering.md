@@ -95,3 +95,5 @@ What matters to us is that a JPEG file starts with a 0xFFD8 sequence and ends in
 Also, we still have no idea about the CPU architecture. The CPU architecture is the way a CPU is designed, which involves a lot of different aspects so, I'm not going to explain more than this. I tried to use Binwalk to identify the type of present opcodes but it is unable to find anything. This means either the code is not executable so, it's a database, or the CPU architecture is not supported by Binwalk, which implies is not a common one. The opcodes are the instructions that a CPU executes. A program written with these opcodes is called machine code.
 
 I think this is enough for today so let's leave it here. A more advanced tool is needed, Ghidra, but that's a project for another day.
+
+[Files in GitHub](https://github.com/Guillermo-Ramirez-Jimenez/Keychain-Camera)
