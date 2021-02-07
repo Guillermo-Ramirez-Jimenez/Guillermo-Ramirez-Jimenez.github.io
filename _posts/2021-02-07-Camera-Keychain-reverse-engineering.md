@@ -24,9 +24,13 @@ If you look closely, it can be seen that the main chip is labeled as SQ907F-L. I
 However, it's equivalent to the SQ907B and there's a backup of their website in the Web Archive which gives a bit of info about the chip's capabilities:
 [SQ907B in old SQ website](http://web.archive.org/web/20111021050700/http://www.sq.com.tw/english/product/dsc100dw.htm)
 
+There's a section about the development kits offered by the company for other chips. According to it, they're x86 chips programmed in C++ running an RTOS. We may be lucky if this chip is similar in some way.
+
 Also, there's a SPI flash chip labeled as 25Q40T. Looking for it on the net reveals it's a 4Mbit SPI flash. I couldn't find the exact datasheet, but looks like the Winbond W25Q40BW is a compatible one. Here's the datasheet:
 [W25Q40BW datasheet](https://www.winbond.com/resource-files/w25q40bw%20revf%20101113.pdf)
 
 Let's make a memory dump! I'm not going to show how to do it in this article, maybe later in a separate one. I'll just say I used a CH341A module with the clip add-on.
+
+The result is a 512KB file. Let's start having a look at it in a hex editor. Here's the result:
 
 TODO
