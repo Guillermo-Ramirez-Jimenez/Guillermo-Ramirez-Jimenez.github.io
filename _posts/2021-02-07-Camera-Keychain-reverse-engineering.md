@@ -28,6 +28,8 @@ However, it's equivalent to the SQ907B and there's a backup of their website in 
 
 There's a section about the development kits offered by the company for other chips. According to it, they're x86 chips programmed in C++ running an RTOS. We may be lucky if this chip is similar in some way.
 
+Additionally, there's a chip labeled as Hynix 401A HY57V161610FTP- 8. This chip is a 1Mx16bit SDRAM. As it's a RAM, there's no info inside it.
+
 Also, there's a SPI flash chip labeled as 25Q40T. These files usually store the device firmware. The firmware is the code that makes the CPU work as we want. Looking for it on the net reveals it's a 4Mbit SPI flash. I couldn't find the exact datasheet, but looks like the Winbond W25Q40BW is a compatible one. Here's the datasheet:
 [W25Q40BW datasheet](https://www.winbond.com/resource-files/w25q40bw%20revf%20101113.pdf)
 
@@ -94,6 +96,6 @@ What matters to us is that a JPEG file starts with a 0xFFD8 sequence and ends in
 
 Also, we still have no idea about the CPU architecture. The CPU architecture is the way a CPU is designed, which involves a lot of different aspects so, I'm not going to explain more than this. I tried to use Binwalk to identify the type of present opcodes but it is unable to find anything. This means either the code is not executable so, it's a database, or the CPU architecture is not supported by Binwalk, which implies is not a common one. The opcodes are the instructions that a CPU executes. A program written with these opcodes is called machine code.
 
-I think this is enough for today so let's leave it here. A more advanced tool is needed, Ghidra, but that's a project for another day.
+I think this is enough for today so let's leave it here. A more advanced tool is needed: Ghidra, but that's a project for another day.
 
 [Files in GitHub](https://github.com/Guillermo-Ramirez-Jimenez/Keychain-Camera)
