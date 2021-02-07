@@ -8,7 +8,7 @@ Some days ago, I found a curious gadget long forgotten at home. It's a keychain,
 
 Unfortunately, the case was damaged and looks like some electronic components were lost. I've not tried to power it on, anyway.
 
-I think it can be an interesting project to dump the firmware and try to figure out as much as we can about this little device.
+I think it can be an interesting project to try to figure out as much as we can about how this little device works.
 
 Looking on the net I found it is known as one of the variants of the 808 Car Keys Micro Camera. There's more information on this site about the model I have: [Link](https://www.chucklohr.com/808/C10/index.html)
 
@@ -20,7 +20,7 @@ I disassembled it, analyzed and took some pictures:
 
 ![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/IMG_20210201_005035.jpg "Bottom")
 
-If you look closely, it can be seen that the main chip is labeled as SQ907F-L. I could not find any particular information about it apart from being QFP-128 so, it's a black box. Actually, looks like the manufacturer is a company from Taiwan. The actual website gives no information about their products:
+If you look closely, it can be seen that the main chip is labeled as SQ907F-L. I could not find any particular information about it apart from being QFP-128 package so, it's a black box, but it's the CPU for sure. Actually, looks like the manufacturer is a company from Taiwan. The actual website gives no information about their products:
 [SQ website](http://www.sq.com.tw/)
 
 However, it's equivalent to the SQ907B and there's a backup of their website in the Web Archive which gives a bit of info about the chip's capabilities:
@@ -28,7 +28,7 @@ However, it's equivalent to the SQ907B and there's a backup of their website in 
 
 There's a section about the development kits offered by the company for other chips. According to it, they're x86 chips programmed in C++ running an RTOS. We may be lucky if this chip is similar in some way.
 
-Also, there's a SPI flash chip labeled as 25Q40T. Looking for it on the net reveals it's a 4Mbit SPI flash. I couldn't find the exact datasheet, but looks like the Winbond W25Q40BW is a compatible one. Here's the datasheet:
+Also, there's a SPI flash chip labeled as 25Q40T. These files usually store the device firmware. The firmware is the code that makes the CPU work as we want. Looking for it on the net reveals it's a 4Mbit SPI flash. I couldn't find the exact datasheet, but looks like the Winbond W25Q40BW is a compatible one. Here's the datasheet:
 [W25Q40BW datasheet](https://www.winbond.com/resource-files/w25q40bw%20revf%20101113.pdf)
 
 Let's make a memory dump! I'm not going to show how to do it in this article, maybe later in a separate one. I'll just say I used a CH341A module with the clip add-on.
@@ -90,8 +90,8 @@ Going back to the Binwalk results, looks like there're some pictures that can be
 
 ![alt text](https://raw.githubusercontent.com/corkami/pics/master/binary/JPG.png "JPEG structure") 
 
-What matters to us is that a JPEG file starts with a 0xFFD8 sequence and ends in a 0xFFD9 one. Looking for them in a hex editor reveals that only the starting sequence is found, and then the EXIF string as Binwalk said. I'm not sure about the meaning of this. Is it a file template? Why is there no ending?. We could dig a bit deeper, but I think it can result in a dead end. Let's try to focus on the OS.
+What matters to us is that a JPEG file starts with a 0xFFD8 sequence and ends in a 0xFFD9 one. Looking for them in a hex editor reveals that only the starting sequence is found, and then the EXIF string as Binwalk said. I'm not sure about the meaning of this. Is it a file template? Why is there no ending? We could dig a bit deeper, but I think it can result in a dead end. Let's try to focus on the OS.
 
-Also, we still have no idea about the architecture. I tried to use Binwalk to locate opcodes but it is unable to find anything.
+Also, we still have no idea about the CPU architecture. The CPU architecture is the way a CPU is designed, which involves a lot of different aspects so, I'm not going to explain more than this. I tried to use Binwalk to identify the type of present opcodes but it is unable to find anything. This means either the code is not executable so, it's a database, or the CPU architecture is not supported by Binwalk, which implies is not a common one. The opcodes are the instructions that a CPU executes. A program written with these opcodes is called machine code.
 
 I think this is enough for today so let's leave it here. A more advanced tool is needed, Ghidra, but that's a project for another day.
