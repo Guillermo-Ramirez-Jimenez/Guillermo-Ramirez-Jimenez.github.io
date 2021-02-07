@@ -82,7 +82,7 @@ Let's have a look at the entropy. The entropy measures the randomness of a file.
 ![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/2_entropy.png "Entropy 2")
 ![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/3_entropy.png "Entropy 3")
 
-Looks good. I think we can safely say there's no encryption at all. Actually, there're some empty spaces in those files, where the entropy is 0. Also, looks like there's a pattern between the addresses 48000 and 52000.
+Looks good. I think we can safely say there's no encryption at all. Actually, there're some empty spaces in those files, where the entropy is 0. Also, looks like there's a common pattern between the addresses 48000 and 52000 in all files.
 
 Going back to the Binwalk results, looks like there're some pictures that can be extracted. They may be false positives so, we have to compare them with the JPEG and TIFF file structure first.
 
