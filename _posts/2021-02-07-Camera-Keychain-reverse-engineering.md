@@ -13,3 +13,9 @@ Looking on the net I found it is known as one of the variants of the 808 Car Key
 I disassembled it, analyzed and took some pictures:
 
 TODO
+
+If you look closely, there is a SPI flash chip labeled as 25Q40T. Looking for it on the net reveals it's a 4Mbit SPI flash. I could not find the exact datasheet, but looks like the Winbond W25Q40BW is a compatible one. Here is the datasheet: [W25Q40BW datasheet](https://www.winbond.com/resource-files/w25q40bw%20revf%20101113.pdf)
+
+Let's make a memory dump!
+
+TODO
