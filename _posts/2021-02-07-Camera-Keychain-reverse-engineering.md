@@ -35,4 +35,6 @@ The result is a 512KB file. Let's start having a look at it in a hex editor (BTW
 
 Let's look for a "boot" string in the file.
 
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/BootStringScreenshot.png "boot string")
+
 TODO
