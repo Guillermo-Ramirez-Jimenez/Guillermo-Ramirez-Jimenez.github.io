@@ -72,4 +72,18 @@ DECIMAL       HEXADECIMAL     DESCRIPTION
 42620         0xA67C          JPEG image data, EXIF standard
 42635         0xA68B          TIFF image data, big-endian, offset of first image directory: 136
 ```
+
+So, the first 3 parts look really similar, while the last one is a bit more particular. Binwalk says that one contains a copyright string. Having a closer look reveals more text actually, but let's take it easy and check something else before.
+
+Let's have a look at the entropy. The entropy measures the randomness of a file. It's important because it can be helpful to notice if a file presents some type of encryption. When a file is encrypted, the intention is to make it as homogeneous as possible so, it is difficult to extract any information from it. Therefore, if the entropy tends to a regular value close to 1, we can conclude the file is encrypted. Let's see.
+
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/0_entropy.png "Entropy 0")
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/1_entropy.png "Entropy 1")
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/2_entropy.png "Entropy 2")
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/3_entropy.png "Entropy 3")
+
+Looks good. I think we can safely say there's no encryption at all.
+
+Going back to the Binwalk results, looks like there're some pictures that can be extracted. But first we need to know the JPEG and TIFF images are stored.
+
 TODO
