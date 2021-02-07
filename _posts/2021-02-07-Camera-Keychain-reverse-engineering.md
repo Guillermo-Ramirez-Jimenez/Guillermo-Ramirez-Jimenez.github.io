@@ -35,6 +35,14 @@ The result is a 512KB file. Let's start having a look at it in a hex editor (BTW
 
 Let's look for a "boot" string in the file.
 
-![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/BootStringScreenshot.png "boot string")
+![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/BootStringScreenshot.png "Boot String")
+
+Not what I expected. However, there are many "SQBOOT" matches. Pay attention to the offsets, the space between matches is 0x10000, which corresponds to 64KB. Going back to the SPI flash datasheet, it can be seen that it's divided in 64KB blocks. It doesn't look like a coincidence.
+
+I wrote a simple Python script which divides the file according to the offsets specified in a separate file. The result is 4 files of 64KB and 1 of 256KB. The last file is the remaining memory, which is blank. Now, it's important to note that a blank memory is full of ones, which means all the values are 0xFF.
+
+Let's have a look at the other files in Binwalk. Binwalk is an open source program designed to identify relevant parts of binary firmware files. The initial results are:
+
+
 
 TODO
