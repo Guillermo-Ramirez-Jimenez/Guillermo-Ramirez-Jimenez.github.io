@@ -1,12 +1,14 @@
 ---
-title: Camera Keychain reverse engineering (ONGOING)
+title: Camera Keychain reverse engineering
 author: Guille
-tags: reverse_engineering camera embedded
+tags: reverse_engineering camera embedded Binwalk
 ---
 
 Some days ago, I found a curious gadget long forgotten at home. It's a keychain, but holds a camera inside! There's a microSD card slot and a microphone too.
 
 Unfortunately, the case was damaged and looks like some electronic components were lost. I've not tried to power it on, anyway.
+
+I think it can be an interesting project to dump the firmware and try to figure out as much as we can about this little device.
 
 Looking on the net I found it is known as one of the variants of the 808 Car Keys Micro Camera. There's more information on this site about the model I have: [Link](https://www.chucklohr.com/808/C10/index.html)
 
@@ -84,6 +86,12 @@ Let's have a look at the entropy. The entropy measures the randomness of a file.
 
 Looks good. I think we can safely say there's no encryption at all. Actually, there're some empty spaces in those files, where the entropy is 0. Also, looks like there's a common pattern between the addresses 48000 and 52000 in all files.
 
-Going back to the Binwalk results, looks like there're some pictures that can be extracted. They may be false positives so, we have to compare them with the JPEG and TIFF file structure first.
+Going back to the Binwalk results, looks like there're some pictures that can be extracted. They may be false positives so, we have to compare them with the JPEG and TIFF structures first. I found this image about the JPEG encoding which can be helpful (credits to Ange Albertini):
 
-TODO
+![alt text](https://raw.githubusercontent.com/corkami/pics/master/binary/JPG.png "JPEG structure") 
+
+What matters to us is that a JPEG file starts with a 0xFFD8 sequence and ends in a 0xFFD9 one. Looking for them in a hex editor reveals that only the starting sequence is found, and then the EXIF string as Binwalk said. I'm not sure about the meaning of this. Is it a file template? Why is there no ending?. We could dig a bit deeper, but I think it can result in a dead end. Let's try to focus on the OS.
+
+Also, we still have no idea about the architecture. I tried to use Binwalk to locate opcodes but it is unable to find anything.
+
+I think this is enough for today so let's leave it here. A more advanced tool is needed, Ghidra, but that's a project for another day.
