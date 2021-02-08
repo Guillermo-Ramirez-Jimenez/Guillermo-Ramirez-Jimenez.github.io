@@ -6,7 +6,7 @@ tags: reverse_engineering camera embedded Binwalk
 
 Some days ago, I found a curious gadget long forgotten at home. It's a keychain, but holds a camera inside! There's a microSD card slot and a microphone too.
 
-Unfortunately, the case was damaged and looks like some electronic components were lost. I've not tried to power it on, anyway.
+Unfortunately, the case was damaged and looks like some electronic components were lost. It doesn't power on, anyway.
 
 I think it can be an interesting project to try to figure out as much as we can about how this little device works.
 
@@ -19,6 +19,8 @@ I disassembled it, analyzed and took some pictures:
 ![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/IMG_20210201_005208.jpg "Top_alt")
 
 ![alt text](https://github.com/Guillermo-Ramirez-Jimenez/Guillermo-Ramirez-Jimenez.github.io/raw/main/_posts/2021-02-07-Camera-Keychain-reverse-engineering/images/IMG_20210201_005035.jpg "Bottom")
+
+The first thing to note is the camera. It's a 24 pin CMOS camera. I haven't found any extra info about it for now.
 
 If you look closely, it can be seen that the main chip is labeled as SQ907F-L. I could not find any particular information about it apart from being QFP-128 package so, it's a black box, but it's the CPU for sure. Actually, looks like the manufacturer is a company from Taiwan. The actual website gives no information about their products:
 [SQ website](http://www.sq.com.tw/)
